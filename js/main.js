@@ -1,25 +1,40 @@
- let arr = [];
- document.querySelectorAll('template').forEach(function (elem, i) {
- 	arr.push(elem);
- });
-console.log(arr)
+let arr = [];
+document.querySelectorAll(`template`).forEach(function (elem, i) {
+  arr.push(elem);
+});
 
 
-function ScreenReplacement(){
+function screenReplacement() {
 
-	let screenNumber = prompt(`Какой экран показать 1-6`,'')
-
-	if (!Element.prototype.remove) {
-    Element.prototype.remove = function () {
-      if (this.parentNode) {
-        this.parentNode.removeChild(this);
-      }
-    };
+  let screenNumber = prompt(`Какой экран показать 1-6`,'');
+  switch (screenNumber) {
+    case `1`:
+      elem.innerHTML = ``;
+      elem.appendChild(arr[0].content.cloneNode(true));
+      break;
+    case `2`:
+      elem.innerHTML = ``;
+      elem.appendChild(arr[1].content.cloneNode(true));
+      break;
+    case `3`:
+      elem.innerHTML = ``;
+      elem.appendChild(arr[2].content.cloneNode(true));
+      break;
+    case `4`:
+      elem.innerHTML = ``;
+      elem.appendChild(arr[3].content.cloneNode(true));
+      break;
+    case `5`:
+      elem.innerHTML = ``;
+      elem.appendChild(arr[4].content.cloneNode(true));
+      break;
+    case `6`:
+      elem.innerHTML = ``;
+      elem.appendChild(arr[5].content.cloneNode(true));
+      break;
+    default:
+      alert(`Введите корректный номер`);
   }
 
-	if(screenNumber == '1'){
-		document.querySelectorAll('.central').remove();
-		console.log(arr[0])
-	}
 }
-ScreenReplacement()
+screenReplacement();
