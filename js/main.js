@@ -1,8 +1,7 @@
-const screenArr = [];
-document.querySelectorAll(`template`).forEach((elem)=> {
-  screenArr.push(elem);
+let template = document.querySelectorAll(`template`);
+const screenArr = [].map.call(template, (elem)=> {
+  return elem;
 });
-// const screenArr = Array.prototype.slice.call(document.querySelectorAll(`template`));
 
 
 function screenReplacement(screenNumber) {
