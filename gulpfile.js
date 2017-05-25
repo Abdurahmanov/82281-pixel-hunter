@@ -1,4 +1,4 @@
-gulp.watch('use strict';
+'use strict';
 
 const del = require('del');
 const gulp = require('gulp');

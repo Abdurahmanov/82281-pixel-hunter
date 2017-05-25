@@ -4,37 +4,57 @@ document.querySelectorAll(`template`).forEach(function (elem, i) {
 });
 
 
-function screenReplacement() {
+function screenReplacement(screenNumber) {
+  let element = document.getElementById(`elem`);
 
-  let screenNumber = prompt(`Какой экран показать 1-6`,'');
   switch (screenNumber) {
-    case `1`:
-      elem.innerHTML = ``;
-      elem.appendChild(arr[0].content.cloneNode(true));
+    case 0:
       break;
-    case `2`:
-      elem.innerHTML = ``;
-      elem.appendChild(arr[1].content.cloneNode(true));
+    case 1:
+      element.innerHTML = ``;
+      element.appendChild(arr[0].content.cloneNode(true));
       break;
-    case `3`:
-      elem.innerHTML = ``;
-      elem.appendChild(arr[2].content.cloneNode(true));
+    case 2:
+      element.innerHTML = ``;
+      element.appendChild(arr[1].content.cloneNode(true));
       break;
-    case `4`:
-      elem.innerHTML = ``;
-      elem.appendChild(arr[3].content.cloneNode(true));
+    case 3:
+      element.innerHTML = ``;
+      element.appendChild(arr[2].content.cloneNode(true));
       break;
-    case `5`:
-      elem.innerHTML = ``;
-      elem.appendChild(arr[4].content.cloneNode(true));
+    case 4:
+      element.innerHTML = ``;
+      element.appendChild(arr[3].content.cloneNode(true));
       break;
-    case `6`:
-      elem.innerHTML = ``;
-      elem.appendChild(arr[5].content.cloneNode(true));
+    case 5:
+      element.innerHTML = ``;
+      element.appendChild(arr[4].content.cloneNode(true));
       break;
-    default:
-      alert(`Введите корректный номер`);
+    case 6:
+      element.innerHTML = ``;
+      element.appendChild(arr[5].content.cloneNode(true));
+      break;
   }
 
 }
-screenReplacement();
+
+let screenNumber = 0;
+
+document.onkeydown = function (e) {
+  if (e.altKey && e.keyCode === 37) {
+    screenNumber = screenNumber - 1;
+  } else if (e.altKey && e.keyCode === 39) {
+    screenNumber = screenNumber + 1;
+  }
+  if (screenNumber >= 6) {
+    screenNumber = 6;
+  } else if (screenNumber <= 0) {
+    screenNumber = 1;
+  }
+  screenReplacement(screenNumber);
+};
+
+setTimeout(function () {
+  screenReplacement(1);
+}, 3000);
+
