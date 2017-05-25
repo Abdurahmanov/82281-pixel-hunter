@@ -1,7 +1,7 @@
 # Личный проект «Пиксель хантер» [![Build status][travis-image]][travis-url]
 
 * Студент: [Артур Абдурахманов](https://up.htmlacademy.ru/ecmascript/2/user/82281).
-* Наставник: `Неизвестно`.
+* Наставник: [Сергей Жигалов](https://htmlacademy.ru/profile/id238235).
 
 ---
 
