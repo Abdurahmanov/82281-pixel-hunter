@@ -1,38 +1,17 @@
-let arr = [];
-document.querySelectorAll(`template`).forEach(function (elem, i) {
-  arr.push(elem);
+const screenArr = [];
+document.querySelectorAll(`template`).forEach((elem)=> {
+  screenArr.push(elem);
 });
+// const screenArr = Array.prototype.slice.call(document.querySelectorAll(`template`));
 
 
 function screenReplacement(screenNumber) {
-  let element = document.getElementById(`elem`);
+  let element = document.getElementById(`main-block`);
 
   switch (screenNumber) {
-    case 0:
-      break;
-    case 1:
+    case screenNumber:
       element.innerHTML = ``;
-      element.appendChild(arr[0].content.cloneNode(true));
-      break;
-    case 2:
-      element.innerHTML = ``;
-      element.appendChild(arr[1].content.cloneNode(true));
-      break;
-    case 3:
-      element.innerHTML = ``;
-      element.appendChild(arr[2].content.cloneNode(true));
-      break;
-    case 4:
-      element.innerHTML = ``;
-      element.appendChild(arr[3].content.cloneNode(true));
-      break;
-    case 5:
-      element.innerHTML = ``;
-      element.appendChild(arr[4].content.cloneNode(true));
-      break;
-    case 6:
-      element.innerHTML = ``;
-      element.appendChild(arr[5].content.cloneNode(true));
+      element.appendChild(screenArr[screenNumber - 1].content.cloneNode(true));
       break;
   }
 
@@ -40,17 +19,15 @@ function screenReplacement(screenNumber) {
 
 let screenNumber = 0;
 
-document.onkeydown = function (e) {
+document.onkeydown = (e)=> {
   if (e.altKey && e.keyCode === 37) {
-    screenNumber = screenNumber - 1;
+    screenNumber--;
   } else if (e.altKey && e.keyCode === 39) {
-    screenNumber = screenNumber + 1;
+    screenNumber++;
   }
-  if (screenNumber >= 6) {
-    screenNumber = 6;
-  } else if (screenNumber <= 0) {
-    screenNumber = 1;
-  }
+
+  screenNumber = Math.min(screenNumber, 6);
+  screenNumber = Math.max(screenNumber, 1);
   screenReplacement(screenNumber);
 };
 
