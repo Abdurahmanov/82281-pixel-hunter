@@ -1,19 +1,10 @@
-let template = document.querySelectorAll(`template`);
-const screenArr = [].map.call(template, (elem)=> {
-  return elem;
-});
-
+const template = document.querySelectorAll(`template`);
+const screenArr = [].slice.call(template);
 
 function screenReplacement(screenNumber) {
-  let element = document.getElementById(`main-block`);
-
-  switch (screenNumber) {
-    case screenNumber:
-      element.innerHTML = ``;
-      element.appendChild(screenArr[screenNumber - 1].content.cloneNode(true));
-      break;
-  }
-
+  const element = document.getElementById(`main-block`);
+  element.innerHTML = ``;
+  element.appendChild(screenArr[screenNumber - 1].content.cloneNode(true));
 }
 
 let screenNumber = 0;
