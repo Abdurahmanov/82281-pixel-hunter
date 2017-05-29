@@ -59,9 +59,10 @@ const moduleGame3 = `
 let screen = {
   template: moduleGame3,
   afterLoaded() {
-    document.querySelectorAll(`.game__option`)[0].onclick = () => addMarkup(statsScreen);
-    document.querySelectorAll(`.game__option`)[1].onclick = () => addMarkup(statsScreen);
-    document.querySelectorAll(`.game__option`)[2].onclick = () => addMarkup(statsScreen);
+    const gameOption = document.querySelectorAll(`.game__option`);
+    for (let i = 0; i < gameOption.length; i++) {
+      gameOption[i].onclick = () => addMarkup(statsScreen);
+    }
     document.querySelector(`.header__back`).onclick = () => addMarkup(greetingScreen);
   },
   afterDestructed() {
