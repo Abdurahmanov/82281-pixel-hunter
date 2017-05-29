@@ -30,6 +30,9 @@ let screen = {
   template: moduleGreeting,
   afterLoaded() {
     document.querySelector(`.greeting__continue`).onclick = () => addMarkup(rulsesScreen);
+  },
+  afterDestructed() {
+
   }
 };
 

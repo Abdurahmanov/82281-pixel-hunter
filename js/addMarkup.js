@@ -9,4 +9,5 @@ export default function getElementFromTemplate(obj) {
   const mainBlock = document.getElementById(`main-block`);
   mainBlock.innerHTML = obj.template;
   obj.afterLoaded();
+  obj.afterDestructed();
 }

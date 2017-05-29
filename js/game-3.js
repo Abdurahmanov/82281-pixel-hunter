@@ -63,6 +63,9 @@ let screen = {
     document.querySelectorAll(`.game__option`)[1].onclick = () => addMarkup(statsScreen);
     document.querySelectorAll(`.game__option`)[2].onclick = () => addMarkup(statsScreen);
     document.querySelector(`.header__back`).onclick = () => addMarkup(greetingScreen);
+  },
+  afterDestructed() {
+
   }
 };
 

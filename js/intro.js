@@ -24,6 +24,8 @@ let screen = {
   template: moduleIntro,
   afterLoaded() {
     document.querySelector(`.intro__asterisk`).onclick = () => addMarkup(greetingScreen);
+  },
+  afterDestructed() {
   }
 };
 

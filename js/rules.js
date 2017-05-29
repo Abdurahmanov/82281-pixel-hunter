@@ -52,6 +52,9 @@ let screen = {
       addMarkup(game1Screen);
     };
     document.querySelector(`.header__back`).onclick = () => addMarkup(greetingScreen);
+  },
+  afterDestructed() {
+
   }
 };
 

@@ -86,6 +86,9 @@ let screen = {
       }
     };
     document.querySelector(`.header__back`).onclick = () => addMarkup(greetingScreen);
+  },
+  afterDestructed() {
+
   }
 };
 
