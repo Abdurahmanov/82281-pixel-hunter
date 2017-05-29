@@ -107,6 +107,5 @@ const moduleStats = `
       </tr>
     </table>
   </div>
-
 `;
 export default moduleStats;

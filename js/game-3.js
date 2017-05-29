@@ -1,5 +1,3 @@
-import addMarkup from './addMarkup';
-import statsScreen from './stats';
 const moduleGame3 = `
     <header class="header">
     <div class="header__back">
@@ -15,7 +13,7 @@ const moduleGame3 = `
       <img src="img/heart__full.svg" class="game__heart" alt="Life" width="32" height="32">
     </div>
   </header>
-  <div class="game">
+  <div class="game game_3">
     <p class="game__task">Найдите рисунок среди изображений</p>
     <form class="game__content  game__content--triple">
       <div class="game__option">
@@ -43,14 +41,6 @@ const moduleGame3 = `
       </ul>
     </div>
   </div>
- 
 `;
 
-setTimeout(function () {
-  if (document.querySelector(`.game`) !== null) {
-    document.querySelector(`.game__option`).onclick = function () {
-      addMarkup(statsScreen);
-    };
-  }
-}, 5000);
 export default moduleGame3;

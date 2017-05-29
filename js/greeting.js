@@ -1,5 +1,3 @@
-import addMarkup from './addMarkup';
-import rulesScreen from './rules';
 const moduleGreeting = `
 <div class="greeting central--blur">
     <div class="greeting__logo"><img src="img/logo_big.png" width="201" height="89" alt="Pixel Hunter"></div>
@@ -15,13 +13,4 @@ const moduleGreeting = `
     <div class="greeting__continue"><span><img src="img/arrow_right.svg" width="64" height="64" alt="Next"></span></div>
   </div>
 `;
-
-setTimeout(function () {
-  if (document.querySelector(`.greeting__continue`) !== null) {
-    document.querySelector(`.greeting__continue`).onclick = function () {
-      addMarkup(rulesScreen);
-    };
-  }
-}, 1000);
-
 export default moduleGreeting;

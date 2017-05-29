@@ -1,5 +1,3 @@
-import addMarkup from './addMarkup';
-import gameOneScreen from './game-1';
 const moduleRules = `
 <header class="header">
     <div class="header__back">
@@ -25,19 +23,6 @@ const moduleRules = `
       <button class="rules__button  continue" type="submit" disabled>Go!</button>
     </form>
   </div>
-`
+`;
 
-setTimeout(function () {
-  if (document.querySelector(`.rules`) !== null) {
-    document.querySelector(`.rules__input`).onkeyup = function () {
-      if (document.querySelector(`.rules__input`).value.length !== 0) {
-        document.querySelector(`.rules__button`).removeAttribute(`disabled`);
-      }
-    };
-    document.querySelector(`.rules__button`).onclick = function (e) {
-      e.preventDefault();
-      addMarkup(gameOneScreen);
-    };
-  }
-}, 5000);
 export default moduleRules;

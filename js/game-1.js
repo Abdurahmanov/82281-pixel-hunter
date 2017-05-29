@@ -1,5 +1,3 @@
-import addMarkup from './addMarkup';
-import gameTwoScreen from './game-2';
 const moduleGame1 = `
 <header class="header">
     <div class="header__back">
@@ -15,7 +13,7 @@ const moduleGame1 = `
       <img src="img/heart__full.svg" class="game__heart" alt="Life" width="32" height="32">
     </div>
   </header>
-  <div class="game">
+  <div class="game game_1">
     <p class="game__task">Угадайте для каждого изображения фото или рисунок?</p>
     <form class="game__content">
       <div class="game__option">
@@ -58,14 +56,4 @@ const moduleGame1 = `
   </div>
 `;
 
-setTimeout(function () {
-  if (document.querySelector(`.game`) !== null) {
-    const question1 = document.getElementsByName(`question1`);
-    const question2 = document.getElementsByName(`question2`);
-
-    if (question1.checked && question2.checked){
-      addMarkup(gameTwoScreen);
-    }
-  }
-}, 5000);
 export default moduleGame1;
