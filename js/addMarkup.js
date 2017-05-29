@@ -1,5 +1,12 @@
-export default function getElementFromTemplate(template, clickSelector, nextScreen) {
-  const mainBlock = document.getElementById(`main`);
-  mainBlock.innerHTML = template;
-  document.querySelector(clickSelector).onclick = () => getElementFromTemplate(nextScreen);
+/*
+Передаваемый функции объект должен иметь следующие атрибуты:
+obj - объект;
+template - строка-шаблон;
+afterLoaded - функция, которая вызывается после помещения шаблона
+afterDestructed - функция, которая вызывается после удаление шаблона
+ */
+export default function getElementFromTemplate(obj) {
+  const mainBlock = document.getElementById(`main-block`);
+  mainBlock.innerHTML = obj.template;
+  obj.afterLoaded();
 }

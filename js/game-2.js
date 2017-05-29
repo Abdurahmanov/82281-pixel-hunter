@@ -1,3 +1,6 @@
+import addMarkup from './addMarkup';
+import game3Screen from './game-3';
+import greetingScreen from './greeting';
 const moduleGame2 = `
   <header class="header">
     <div class="header__back">
@@ -43,6 +46,29 @@ const moduleGame2 = `
       </ul>
     </div>
   </div>
+  <footer class="footer">
+    <a href="https://htmlacademy.ru" class="social-link social-link--academy">HTML Academy</a>
+    <span class="footer__made-in">Сделано в <a href="https://htmlacademy.ru" class="footer__link">HTML Academy</a> &copy; 2016</span>
+    <div class="footer__social-links">
+      <a href="https://twitter.com/htmlacademy_ru" class="social-link  social-link--tw">Твиттер</a>
+      <a href="https://www.instagram.com/htmlacademy/" class="social-link  social-link--ins">Инстаграм</a>
+      <a href="https://www.facebook.com/htmlacademy" class="social-link  social-link--fb">Фэйсбук</a>
+      <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
+    </div>
+  </footer>
 `;
 
-export default moduleGame2;
+let screen = {
+  template: moduleGame2,
+  afterLoaded() {
+    const question1 = document.getElementsByName(`question1`);
+    document.querySelector(`.game__content`).onchange = function () {
+      if (question1[0].checked || question1[1].checked) {
+        addMarkup(game3Screen);
+      }
+    };
+    document.querySelector(`.header__back`).onclick = () => addMarkup(greetingScreen);
+  }
+};
+
+export default screen;

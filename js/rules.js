@@ -1,3 +1,6 @@
+import addMarkup from './addMarkup';
+import game1Screen from './game-1';
+import greetingScreen from './greeting';
 const moduleRules = `
 <header class="header">
     <div class="header__back">
@@ -23,6 +26,33 @@ const moduleRules = `
       <button class="rules__button  continue" type="submit" disabled>Go!</button>
     </form>
   </div>
+  <footer class="footer">
+    <a href="https://htmlacademy.ru" class="social-link social-link--academy">HTML Academy</a>
+    <span class="footer__made-in">Сделано в <a href="https://htmlacademy.ru" class="footer__link">HTML Academy</a> &copy; 2016</span>
+    <div class="footer__social-links">
+      <a href="https://twitter.com/htmlacademy_ru" class="social-link  social-link--tw">Твиттер</a>
+      <a href="https://www.instagram.com/htmlacademy/" class="social-link  social-link--ins">Инстаграм</a>
+      <a href="https://www.facebook.com/htmlacademy" class="social-link  social-link--fb">Фэйсбук</a>
+      <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
+    </div>
+  </footer>
 `;
+let screen = {
+  template: moduleRules,
+  afterLoaded() {
+    document.querySelector(`.rules__input`).onkeyup = function () {
+      if (document.querySelector(`.rules__input`).value.length !== 0) {
+        document.querySelector(`.rules__button`).removeAttribute(`disabled`);
+      } else {
+        document.querySelector(`.rules__button`).setAttribute(`disabled`);
+      }
+    };
+    document.querySelector(`.rules__button`).onclick = function (e) {
+      e.preventDefault();
+      addMarkup(game1Screen);
+    };
+    document.querySelector(`.header__back`).onclick = () => addMarkup(greetingScreen);
+  }
+};
 
-export default moduleRules;
+export default screen;
