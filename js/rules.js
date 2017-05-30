@@ -41,8 +41,9 @@ let rulesScreen = {
   template: moduleRules,
   afterLoaded() {
     const rulesButton = document.querySelector(`.rules__button`);
-    document.querySelector(`.rules__input`).onkeyup = function () {
-      if (document.querySelector(`.rules__input`).value.length !== 0) {
+    const rulesInput = document.querySelector(`.rules__input`);
+    rulesInput.onkeyup = function () {
+      if (rulesInput.value.length !== 0) {
         rulesButton.removeAttribute(`disabled`);
       } else {
         rulesButton.setAttribute(`disabled`);
