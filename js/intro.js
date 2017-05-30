@@ -17,16 +17,13 @@ const moduleIntro = `
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
   </footer>
-
 `;
 
-let screen = {
+let introScreen = {
   template: moduleIntro,
   afterLoaded() {
     document.querySelector(`.intro__asterisk`).onclick = () => addMarkup(greetingScreen);
-  },
-  afterDestructed() {
   }
 };
 
-export default screen;
+export default introScreen;

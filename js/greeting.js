@@ -26,14 +26,11 @@ const moduleGreeting = `
   </footer>
 `;
 
-let screen = {
+let greetingScreen = {
   template: moduleGreeting,
   afterLoaded() {
     document.querySelector(`.greeting__continue`).onclick = () => addMarkup(rulsesScreen);
-  },
-  afterDestructed() {
-
   }
 };
 
-export default screen;
+export default greetingScreen;

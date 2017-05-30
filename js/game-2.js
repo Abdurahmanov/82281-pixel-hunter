@@ -58,7 +58,7 @@ const moduleGame2 = `
   </footer>
 `;
 
-let screen = {
+let gameTwoScreen = {
   template: moduleGame2,
   afterLoaded() {
     const question1 = document.getElementsByName(`question1`);
@@ -68,10 +68,7 @@ let screen = {
       }
     };
     document.querySelector(`.header__back`).onclick = () => addMarkup(greetingScreen);
-  },
-  afterDestructed() {
-
   }
 };
 
-export default screen;
+export default gameTwoScreen;

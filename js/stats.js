@@ -120,14 +120,11 @@ const moduleStats = `
     </div>
   </footer>
 `;
-let screen = {
+let statsScreen = {
   template: moduleStats,
   afterLoaded() {
     document.querySelector(`.header__back`).onclick = () => addMarkup(greetingScreen);
-  },
-  afterDestructed() {
-
   }
 };
 
-export default screen;
+export default statsScreen;

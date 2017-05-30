@@ -37,25 +37,23 @@ const moduleRules = `
     </div>
   </footer>
 `;
-let screen = {
+let rulesScreen = {
   template: moduleRules,
   afterLoaded() {
+    const rulesButton = document.querySelector(`.rules__button`);
     document.querySelector(`.rules__input`).onkeyup = function () {
       if (document.querySelector(`.rules__input`).value.length !== 0) {
-        document.querySelector(`.rules__button`).removeAttribute(`disabled`);
+        rulesButton.removeAttribute(`disabled`);
       } else {
-        document.querySelector(`.rules__button`).setAttribute(`disabled`);
+        rulesButton.setAttribute(`disabled`);
       }
     };
-    document.querySelector(`.rules__button`).onclick = function (e) {
+    rulesButton.onclick = function (e) {
       e.preventDefault();
       addMarkup(game1Screen);
     };
     document.querySelector(`.header__back`).onclick = () => addMarkup(greetingScreen);
-  },
-  afterDestructed() {
-
   }
 };
 
-export default screen;
+export default rulesScreen;

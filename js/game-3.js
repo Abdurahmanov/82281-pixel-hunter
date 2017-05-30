@@ -56,7 +56,7 @@ const moduleGame3 = `
   </footer>
 `;
 
-let screen = {
+let gameThreeScreen = {
   template: moduleGame3,
   afterLoaded() {
     const gameOption = document.querySelectorAll(`.game__option`);
@@ -64,10 +64,7 @@ let screen = {
       gameOption[i].onclick = () => addMarkup(statsScreen);
     }
     document.querySelector(`.header__back`).onclick = () => addMarkup(greetingScreen);
-  },
-  afterDestructed() {
-
   }
 };
 
-export default screen;
+export default gameThreeScreen;

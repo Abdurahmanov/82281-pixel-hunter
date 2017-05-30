@@ -69,27 +69,22 @@ const moduleGame1 = `
   </footer>
 `;
 
-let screen = {
+let gameOneScreen = {
   template: moduleGame1,
   afterLoaded() {
     const question1 = document.getElementsByName(`question1`);
     const question2 = document.getElementsByName(`question2`);
     document.querySelector(`.game__content`).onchange = function () {
-      if (question1[0].checked && question2[0].checked) {
-        addMarkup(game2Screen);
-      } else if (question1[0].checked && question2[1].checked) {
-        addMarkup(game2Screen);
-      } else if (question1[1].checked && question2[0].checked) {
-        addMarkup(game2Screen);
-      } else if (question1[1].checked && question2[1].checked) {
-        addMarkup(game2Screen);
+      for (let i = 0; i < question1.length; i++) {
+        for (let j = 0; j < question2.length; j++) {
+          if (question1[i].checked && question2[j].checked) {
+            addMarkup(game2Screen);
+          }
+        }
       }
     };
     document.querySelector(`.header__back`).onclick = () => addMarkup(greetingScreen);
-  },
-  afterDestructed() {
-
   }
 };
 
-export default screen;
+export default gameOneScreen;
