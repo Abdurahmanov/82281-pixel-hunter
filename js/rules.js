@@ -49,7 +49,7 @@ let rulesScreen = {
         rulesButton.setAttribute(`disabled`);
       }
     };
-    rulesButton.onclick = function (e) {
+    rulesButton.onclick = (e) => {
       e.preventDefault();
       addMarkup(game1Screen);
     };

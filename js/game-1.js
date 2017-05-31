@@ -79,6 +79,7 @@ let gameOneScreen = {
         for (let j = 0; j < question2.length; j++) {
           if (question1[i].checked && question2[j].checked) {
             addMarkup(game2Screen);
+            return;
           }
         }
       }
