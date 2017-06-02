@@ -1,9 +1,10 @@
 import addMarkup from './addMarkup';
 import header from './header';
+import {initialState} from './data';
 import greetingScreen from './greeting';
 import footer from './footer';
 const moduleStats = `
-${header}
+${header(initialState)}
   <div class="result">
     <h1>Победа!</h1>
     <table class="result__table">

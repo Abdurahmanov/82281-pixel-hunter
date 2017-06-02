@@ -3,8 +3,9 @@ import game1Screen from './game-1';
 import header from './header';
 import footer from './footer';
 import greetingScreen from './greeting';
+import {initialState} from './data';
 const moduleRules = `
-${header}
+${header(initialState)}
   <div class="rules">
     <h1 class="rules__title">Правила</h1>
     <p class="rules__description">Угадай 10 раз для каждого изображения фото <img
