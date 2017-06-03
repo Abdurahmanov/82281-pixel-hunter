@@ -24,7 +24,8 @@ ${header(initialState)}
   </div>
   ${footer}
 `;
-let rulesScreen = {
+
+const rulesScreen = {
   template: moduleRules,
   afterLoaded() {
     const rulesButton = document.querySelector(`.rules__button`);

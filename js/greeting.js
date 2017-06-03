@@ -18,7 +18,7 @@ const moduleGreeting = `
   ${footer}
 `;
 
-let greetingScreen = {
+const greetingScreen = {
   template: moduleGreeting,
   afterLoaded() {
     document.querySelector(`.greeting__continue`).onclick = () => addMarkup(rulsesScreen);

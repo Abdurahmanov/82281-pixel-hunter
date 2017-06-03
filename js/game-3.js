@@ -10,14 +10,22 @@ const moduleGame3 = `
   <div class="game">
     <p class="game__task">${games.games3.title}</p>
     <form class="game__content  game__content--triple">
-      ${games.games3.option}
+      <div class="game__option">
+        <img src="${games.games3.img1}" alt="Option 1" width="304" height="455">
+      </div>
+      <div class="game__option  game__option--selected">
+        <img src="${games.games3.img2}" alt="Option 1" width="304" height="455">
+      </div>
+      <div class="game__option">
+        <img src="${games.games3.img3}" alt="Option 1" width="304" height="455">
+      </div>
     </form>
      ${statsBlock}
   </div>
   ${footer}
 `;
 
-let gameThreeScreen = {
+const gameThreeScreen = {
   template: moduleGame3,
   afterLoaded() {
     const gameOption = document.querySelectorAll(`.game__option`);

@@ -10,14 +10,24 @@ const moduleGame2 = `
   <div class="game game_2">
     <p class="game__task">${games.games2.title}</p>
     <form class="game__content  game__content--wide">
-      ${games.games2.option}
+      <div class="game__option">
+        <img src="${games.games2.img}" alt="Option 1" width="705" height="455">
+        <label class="game__answer  game__answer--photo">
+          <input name="question1" type="radio" value="photo">
+          <span>Фото</span>
+        </label>
+        <label class="game__answer  game__answer--wide  game__answer--paint">
+          <input name="question1" type="radio" value="paint">
+          <span>Рисунок</span>
+        </label>
+      </div>
     </form>
      ${statsBlock}
   </div>
   ${footer}
 `;
 
-let gameTwoScreen = {
+const gameTwoScreen = {
   template: moduleGame2,
   afterLoaded() {
     const question1 = document.getElementsByName(`question1`);

@@ -107,7 +107,8 @@ ${header(initialState)}
   </div>
   ${footer}
 `;
-let statsScreen = {
+
+const statsScreen = {
   template: moduleStats,
   afterLoaded() {
     document.querySelector(`.header__back`).onclick = () => addMarkup(greetingScreen);

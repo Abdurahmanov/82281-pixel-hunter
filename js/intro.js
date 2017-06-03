@@ -11,7 +11,7 @@ const moduleIntro = `
  ${footer}
 `;
 
-let introScreen = {
+const introScreen = {
   template: moduleIntro,
   afterLoaded() {
     document.querySelector(`.intro__asterisk`).onclick = () => addMarkup(greetingScreen);
