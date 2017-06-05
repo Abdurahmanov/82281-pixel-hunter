@@ -1,6 +1,7 @@
 import addMarkup from './addMarkup';
 import greetingScreen from './greeting';
 import footer from './footer';
+
 const moduleIntro = `
 <div id="main" class="central__content">
 <div id="intro" class="intro">

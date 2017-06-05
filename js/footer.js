@@ -1,4 +1,5 @@
 import {footerDate} from './data';
+
 const footer = `
 <footer class="footer">
     <a href="https://htmlacademy.ru" class="social-link social-link--academy">HTML Academy</a>

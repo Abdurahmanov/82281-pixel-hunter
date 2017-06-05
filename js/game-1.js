@@ -5,6 +5,7 @@ import header from './header';
 import statsBlock from './statsBlock';
 import footer from './footer';
 import greetingScreen from './greeting';
+
 const moduleGame1 = `
   ${header(initialState)}
   <div class="game game_1">
@@ -37,6 +38,7 @@ const moduleGame1 = `
   </div>
   ${footer}
 `;
+
 const gameOneScreen = {
   template: moduleGame1,
   afterLoaded() {

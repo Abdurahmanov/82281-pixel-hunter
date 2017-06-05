@@ -4,6 +4,7 @@ import header from './header';
 import footer from './footer';
 import greetingScreen from './greeting';
 import {initialState} from './data';
+
 const moduleRules = `
 ${header(initialState)}
   <div class="rules">

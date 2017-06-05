@@ -3,6 +3,7 @@ import header from './header';
 import {initialState} from './data';
 import greetingScreen from './greeting';
 import footer from './footer';
+
 const moduleStats = `
 ${header(initialState)}
   <div class="result">

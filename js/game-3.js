@@ -5,6 +5,7 @@ import {initialState, games} from './data';
 import statsBlock from './statsBlock';
 import footer from './footer';
 import greetingScreen from './greeting';
+
 const moduleGame3 = `
   ${header(initialState)}
   <div class="game">
