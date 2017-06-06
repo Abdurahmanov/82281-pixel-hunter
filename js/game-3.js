@@ -9,16 +9,16 @@ import greetingScreen from './greeting';
 const moduleGame3 = `
   ${header(initialState)}
   <div class="game">
-    <p class="game__task">${games.games3.title}</p>
+    <p class="game__task">${games[2].title}</p>
     <form class="game__content  game__content--triple">
       <div class="game__option">
-        <img src="${games.games3.img1}" alt="Option 1" width="304" height="455">
+        <img src="${games[2].img1}" alt="Option 1" width="304" height="455">
       </div>
       <div class="game__option  game__option--selected">
-        <img src="${games.games3.img2}" alt="Option 1" width="304" height="455">
+        <img src="${games[2].img2}" alt="Option 1" width="304" height="455">
       </div>
       <div class="game__option">
-        <img src="${games.games3.img3}" alt="Option 1" width="304" height="455">
+        <img src="${games[2].img3}" alt="Option 1" width="304" height="455">
       </div>
     </form>
      ${statsBlock}

@@ -6,23 +6,23 @@ const initialState = Object.freeze({
   time: 0
 });
 
-const games = Object.freeze({
-  games1: {
+const games = [
+  {
     title: `Угадайте для каждого изображения фото или рисунок?`,
-    img1: img.photos[0],
-    img2: img.paintings[2],
+    img1: img.photos[Math.floor(Math.random() * 3)],
+    img2: img.paintings[Math.floor(Math.random() * 3)],
   },
-  games2: {
+  {
     title: `Угадай, фото или рисунок?`,
-    img1: img.paintings[1],
+    img1: img.paintings[Math.floor(Math.random() * 3)]
   },
-  games3: {
+  {
     title: `Найдите рисунок среди изображений`,
-    img1: img.photos[1],
-    img2: img.paintings[0],
-    img3: img.photos[2],
+    img1: img.photos[Math.floor(Math.random() * 3)],
+    img2: img.paintings[Math.floor(Math.random() * 3)],
+    img3: img.photos[Math.floor(Math.random() * 3)]
   }
-});
+];
 
 const footerDate = Object({
   cop: 2016
