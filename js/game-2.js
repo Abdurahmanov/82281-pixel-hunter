@@ -1,7 +1,7 @@
 import addMarkup from './addMarkup';
 import game3Screen from './game-3';
 import header from './header';
-import {initialState, games} from './data';
+import {initialState, questions} from './data';
 import statsBlock from './statsBlock';
 import footer from './footer';
 import greetingScreen from './greeting';
@@ -9,10 +9,10 @@ import greetingScreen from './greeting';
 const moduleGame2 = `
   ${header(initialState)}
   <div class="game game_2">
-    <p class="game__task">${games[1].title}</p>
+    <p class="game__task">${questions[1].title}</p>
     <form class="game__content  game__content--wide">
-      <div class="game__option">
-        <img src="${games[1].img1}" alt="Option 1" width="705" height="455">
+      <div class="game__option" >
+        <img src="${questions[1].img1}" alt="Option 1" width="705" height="455">
         <label class="game__answer  game__answer--photo">
           <input name="question1" type="radio" value="photo">
           <span>Фото</span>
@@ -23,7 +23,9 @@ const moduleGame2 = `
         </label>
       </div>
     </form>
-     ${statsBlock}
+     <div class="stats">
+        ${statsBlock}
+      </div>
   </div>
   ${footer}
 `;

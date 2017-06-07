@@ -1,27 +1,29 @@
 import addMarkup from './addMarkup';
 import statsScreen from './stats';
 import header from './header';
-import {initialState, games} from './data';
+import {initialState, questions} from './data';
 import statsBlock from './statsBlock';
 import footer from './footer';
 import greetingScreen from './greeting';
 
+const questionGame3 = (img) => `
+<div class="game__option" >
+    <img src="${img}" alt="Option 1" width="304" height="455">
+  </div>
+  `;
+
 const moduleGame3 = `
   ${header(initialState)}
   <div class="game">
-    <p class="game__task">${games[2].title}</p>
+    <p class="game__task">${questions[2].title}</p>
     <form class="game__content  game__content--triple">
-      <div class="game__option">
-        <img src="${games[2].img1}" alt="Option 1" width="304" height="455">
-      </div>
-      <div class="game__option  game__option--selected">
-        <img src="${games[2].img2}" alt="Option 1" width="304" height="455">
-      </div>
-      <div class="game__option">
-        <img src="${games[2].img3}" alt="Option 1" width="304" height="455">
-      </div>
+      ${questionGame3(questions[2].img1)}
+      ${questionGame3(questions[2].img2)}
+      ${questionGame3(questions[2].img3)}
     </form>
-     ${statsBlock}
+    <div class="stats">
+        ${statsBlock}
+      </div>
   </div>
   ${footer}
 `;
