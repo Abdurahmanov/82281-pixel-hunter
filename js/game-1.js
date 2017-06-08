@@ -6,27 +6,30 @@ import statsBlock from './statsBlock';
 import footer from './footer';
 import greetingScreen from './greeting';
 
-const questionGame1 = (img, name) => `
-<div class="game__option" >
-  <img src="${img}" alt="Option 1" width="468" height="458">
-  <label class="game__answer game__answer--photo">
-  <input name="${name}" type="radio" value="photo">
-  <span>Фото</span>
-  </label>
-  <label class="game__answer game__answer--paint">
-  <input name="${name}" type="radio" value="paint">
-  <span>Рисунок</span>
-  </label>
-  </div>
-  `;
+const drawQuestion1 = (game) =>{
+  return `
+    ${[...game].map(({img, name}) => {
+      return `
+             <div class="game__option" >
+                <img src="${img}" alt="Option 1">
+                <label class="game__answer game__answer--photo">
+                <input name="${name}" type="radio" value="photo">
+                <span>Фото</span>
+                </label>
+                <label class="game__answer game__answer--paint">
+                <input name="${name}" type="radio" value="paint">
+                <span>Рисунок</span>
+                </label>
+             </div>`;
+    }).join(``)}`;
+};
 
 const moduleGame1 = `
   ${header(initialState)}
   <div class="game game_1">
     <p class="game__task">${questions[0].title}</p>
     <form class="game__content">
-      ${questionGame1(questions[0].img1, questions[0].name1)}
-      ${questionGame1(questions[0].img2, questions[0].name2)}
+      ${drawQuestion1(questions[0].game)}
     </form>
       <div class="stats">
          ${statsBlock(initialState.stats)}
