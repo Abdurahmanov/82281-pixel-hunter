@@ -5,7 +5,7 @@ import greetingScreen from './greeting';
 import statsBlock from './statsBlock';
 import footer from './footer';
 
-const dataData = (bonus) => {
+const drawBonus = (bonus) => {
   return `
   ${[...bonus].map(({name, justBonus, points, total, nameClass}) => {
     return `
@@ -27,7 +27,7 @@ const tableHtml = ({gameNumber, stats, dublePoints, totalPointsStats, amountPoin
         <td class="result__points">×&nbsp;${dublePoints}</td>
         <td class="result__total">${totalPointsStats}</td>
       </tr>
-        ${dataData(bonus)}
+        ${drawBonus(bonus)}
       <tr>
         <td colspan="5" class="result__total  result__total--final">${amountPoints}</td>
       </tr>
