@@ -22,7 +22,7 @@ const moduleGame3 = `
       ${questionGame3(questions[2].img3)}
     </form>
     <div class="stats">
-        ${statsBlock}
+         ${statsBlock(initialState.stats)}
       </div>
   </div>
   ${footer}

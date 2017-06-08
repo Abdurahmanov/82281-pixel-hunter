@@ -1,9 +1,9 @@
 import img from './img';
 
 const initialState = Object.freeze({
-  level: 0,
   lives: 3,
-  time: 0
+  time: 0,
+  stats: [`wrong`, `slow`, `fast`, `correct`, `wrong`, `unknown`, `fast`, `unknown`, `fast`, `wrong`],
 });
 
 const questions = [
@@ -27,9 +27,58 @@ const questions = [
   }
 ];
 
+const bonusState = [
+  {
+    stats: initialState.stats,
+    gameNumber: 1,
+    bonus: [
+      {
+        name: `Бонус за скорость`,
+        justBonus: 1,
+        points: 50,
+        total: 50,
+        nameClass: `fast`
+      },
+      {
+        name: `Бонус за жизнь`,
+        justBonus: 2,
+        points: 50,
+        total: 100,
+        nameClass: `heart`
+      },
+      {
+        name: `Штраф за медлительность`,
+        justBonus: 2,
+        points: 50,
+        total: -100,
+        nameClass: `slow`
+      }
+    ],
+    totalPointsStats: 900,
+    dublePoints: 100,
+    amountPoints: 900
+  },
+  {
+    stats: initialState.stats,
+    gameNumber: 1,
+    bonus: [
+      {
+        name: `Бонус за жизнь`,
+        justBonus: 2,
+        points: 50,
+        total: 100,
+        nameClass: `heart`
+      },
+    ],
+    totalPointsStats: 900,
+    dublePoints: 100,
+    amountPoints: 900
+  }
+];
+
 const footerDate = Object({
   cop: 2016
 });
 
-export {initialState, questions, footerDate};
+export {initialState, questions, footerDate, bonusState};
 

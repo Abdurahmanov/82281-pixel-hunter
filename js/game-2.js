@@ -24,7 +24,7 @@ const moduleGame2 = `
       </div>
     </form>
      <div class="stats">
-        ${statsBlock}
+         ${statsBlock(initialState.stats)}
       </div>
   </div>
   ${footer}
