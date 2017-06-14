@@ -9,7 +9,7 @@ const initialState = Object.freeze({
 const questions = [
   {
     title: `Угадайте для каждого изображения фото или рисунок?`,
-    game: [
+    answers: [
       {
         img: img.photos[Math.floor(Math.random() * 3)],
         answer: `photo`,
@@ -24,7 +24,7 @@ const questions = [
   },
   {
     title: `Угадай, фото или рисунок?`,
-    game: [
+    answers: [
       {
         img: img.paintings[Math.floor(Math.random() * 3)],
         answer: `paint`,
@@ -34,7 +34,7 @@ const questions = [
   },
   {
     title: `Найдите рисунок среди изображений`,
-    game: [
+    answers: [
       {
         img: img.photos[Math.floor(Math.random() * 3)],
         answer: `photo`,

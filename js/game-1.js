@@ -6,9 +6,9 @@ import statsBlock from './statsBlock';
 import footer from './footer';
 import greetingScreen from './greeting';
 
-const drawQuestion1 = (game) =>{
+const drawQuestion1 = (answers) =>{
   return `
-    ${[...game].map(({img, name}) => {
+    ${[...answers].map(({img, name}) => {
       return `
              <div class="game__option" >
                 <img src="${img}" alt="Option 1">
@@ -29,7 +29,7 @@ const moduleGame1 = `
   <div class="game game_1">
     <p class="game__task">${questions[0].title}</p>
     <form class="game__content">
-      ${drawQuestion1(questions[0].game)}
+      ${drawQuestion1(questions[0].answers)}
     </form>
       <div class="stats">
          ${statsBlock(initialState.stats)}
