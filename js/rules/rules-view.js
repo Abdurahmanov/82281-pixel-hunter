@@ -2,6 +2,8 @@ import view from '../AbstractView';
 import footer from '../footer';
 import header from '../header';
 import {initialState} from '../data';
+import game from '../game/game';
+import greeting from '../greeting/greeting';
 
 export default class RulesView extends view {
   get template() {
@@ -26,6 +28,19 @@ export default class RulesView extends view {
   ${footer} `;
   }
   bind() {
-    // document.querySelector(`.greeting__continue`).onclick = () => console.log(1);
+    const rulesButton = document.querySelector(`.rules__button`);
+    const rulesInput = document.querySelector(`.rules__input`);
+    rulesInput.onkeyup = function () {
+      if (rulesInput.value.length !== 0) {
+        rulesButton.removeAttribute(`disabled`);
+      } else {
+        rulesButton.setAttribute(`disabled`);
+      }
+    };
+    rulesButton.onclick = (e) => {
+      e.preventDefault();
+      game();
+    };
+    document.querySelector(`.header__back`).onclick = () => greeting();
   }
 }

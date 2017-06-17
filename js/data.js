@@ -3,7 +3,7 @@ import img from './img';
 const initialState = Object.freeze({
   lives: 3,
   time: 0,
-  stats: [`wrong`, `slow`, `fast`, `correct`, `wrong`, `unknown`, `fast`, `unknown`, `fast`, `wrong`],
+  stats: [`unknown`, `unknown`, `unknown`, `unknown`, `unknown`, `unknown`, `unknown`, `unknown`, `unknown`, `unknown`],
 });
 
 const questions = [
